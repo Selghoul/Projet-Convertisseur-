@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<HTML>
+    <link href = "convertisseurs.css" rel="stylesheet"> 
+<HEAD>
+<Script language='javascript'>
+
+function ConvertirEnEuros()
+{
+if (isNaN(Form1.Dollar.value) == true)
+{
+alert('Merci de saisir un nombre. Conversion Impossible.');
+}
+else
+{
+Form1.Euros.value = Math.round(Form1.Dollar.value * 0.83 *100)/100;
+}
+}
+
+function ConvertirEnDollar()
+{
+if (isNaN(Form1.Euros.value) == true)
+{
+alert('Merci de saisir un nombre. Conversion Impossible.');
+}
+else
+{
+Form1.Dollar.value = Math.round(Form1.Euros.value * 1.20 *100)/100;
+}
+}
+</Script>
+
+</HEAD>
+    
+<BODY onLoad='ConvertirEnDollar()'>
+    
+<div id='container'>
+<br>
+<FORM Name='Form1' action='convertisseur.html'>
+    <h2>CONVERTISSEUR MONNAIES</h2>
+    <!-- Euros-->
+    <br><br><br><br>
+
+    <div class= "convertisseur1">
+
+Euros &ensp; <input type='text' Name='Euros' onKeyUp='ConvertirEnDollar()'placeholder = "€" >
+<br>
+Dollar &ensp; <input type='text' Name='Dollar' onKeyUp='ConvertirEnEuros()'placeholder = "$" >
+        <br>
+        <input type = "reset" value='Réinitialiser'>
+    <br>
+ </div>
+
+    </BODY>
+</HTML>
